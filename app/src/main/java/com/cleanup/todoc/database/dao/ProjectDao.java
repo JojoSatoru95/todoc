@@ -15,19 +15,11 @@ import java.util.List;
 @Dao
 public interface ProjectDao {
 
-    // Replace project with same id
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    // Get all projects
+    @Query("SELECT * FROM project_table")
+    LiveData<List<Project>> getProjects();
 
-    void createProject(Project project);
-
-    // Get a project
-    @Query("SELECT * FROM Project WHERE id = :projectId")
-
-    LiveData<Project> getProject(long projectId);
-
-    // Get all project
-    @Query("SELECT * FROM Project")
-
-    LiveData<List<Project>> getAllProjects
+    @Insert
+    void insertProject(Project... projects);
 
 }

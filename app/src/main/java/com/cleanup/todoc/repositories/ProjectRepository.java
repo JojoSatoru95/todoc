@@ -12,19 +12,16 @@ import java.util.List;
 
 public class ProjectRepository {
 
-    private ProjectDao mProjectDao;
-    private LiveData<List<Project>> mAllProjects;
+    private ProjectDao projectDao;
 
-    ProjectRepository(Application application) {
-        TodocDatabase db = TodocDatabase.getInstance(application);
-        mProjectDao = db.projectDao();
-        mAllProjects = mProjectDao.getAllProjects();
-    }
+    public ProjectRepository(ProjectDao projectDao) { this.projectDao = projectDao; }
+
+    // Get all projects
+    public LiveData<List<Project>> getProjects() { return this.projectDao.getProjects(); }
 
 
-    LiveData<List<Project>> getAllProjects() {
-        return mAllProjects;
-    }
+
+
 
 
 }

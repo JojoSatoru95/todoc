@@ -13,18 +13,29 @@ import java.util.List;
 
 public class TaskRepository {
 
-    private TaskDao mTaskDao;
-    private LiveData<List<Task>> mAllTasks;
+    private TaskDao taskDao;
 
-    TaskRepository(Application application) {
-        TodocDatabase db = TodocDatabase.getInstance(application);
-        mTaskDao = db.taskDao();
-        mAllTasks = mTaskDao.getAllTasks();
+
+    public TaskRepository(TaskDao taskDao) {
+        this.taskDao = taskDao;
     }
 
 
-    LiveData<List<Task>> getAllTasks() {
-        return mAllTasks;
+    // Get All Tasks
+    public LiveData<List<Task>> getAllTasks() {
+        return taskDao.getAllTasks();
     }
+
+    // Create
+    public void createTask(Task task) { taskDao.insertTask(task); }
+
+    // Delete
+    public void deleteTask(Task task) { taskDao.deleteTask(task); }
+
+
+
+
+
+
 
 }
