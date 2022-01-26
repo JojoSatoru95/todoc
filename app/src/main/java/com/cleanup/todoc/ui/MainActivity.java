@@ -51,15 +51,10 @@ public class MainActivity extends AppCompatActivity implements TasksAdapter.Dele
     private TaskViewModel taskViewModel;
 
 
-
     /**
      * The adapter which handles the list of tasks
      */
     private final TasksAdapter adapter = new TasksAdapter(new ArrayList<>(), this);
-
-    /**
-     * The sort method to be used to display tasks
-     */
 
 
     /**
@@ -311,17 +306,5 @@ public class MainActivity extends AppCompatActivity implements TasksAdapter.Dele
             dialogSpinner.setAdapter(adapter);
         }
     }
-
-    /**
-     * List of all possible sort methods for task
-     */
-
-
-
-
-
-
-
-
 
 }
