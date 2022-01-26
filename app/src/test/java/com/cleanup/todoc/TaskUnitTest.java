@@ -3,6 +3,8 @@ package com.cleanup.todoc;
 import com.cleanup.todoc.model.Task;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,6 +13,8 @@ import java.util.Date;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
+
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 /**
  * Unit tests for tasks

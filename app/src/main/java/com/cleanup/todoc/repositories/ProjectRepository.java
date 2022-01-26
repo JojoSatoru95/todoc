@@ -19,6 +19,9 @@ public class ProjectRepository {
     // Get all projects
     public LiveData<List<Project>> getProjects() { return this.projectDao.getProjects(); }
 
+    // Get a project
+    public LiveData<Project> getProject(long projectId) { return this.projectDao.getProject(projectId);}
+
 
 
 
