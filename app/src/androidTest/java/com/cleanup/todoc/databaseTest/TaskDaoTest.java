@@ -54,9 +54,9 @@ public class TaskDaoTest {
 
 
     @Test
-    public void insertAndGetUser() throws InterruptedException {
+    public void insertAndGetProject() throws InterruptedException {
 
-        // BEFORE : Adding a new user
+        // BEFORE : Adding a new project
         this.database.projectDao().insertProject(PROJECT_DEMO);
 
 
